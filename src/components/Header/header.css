@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700&family=Peralta&family=Poppins:wght@300;400;500;600&display=swap');
+
+.header {
+    width: 100%;
+    height: 100%;
+    color: var(--color-text-primay);
+    background-color: transparent;
+}
+
+
+.header .bag {
+    z-index: 999;
+    width: 350px;
+    background-color: var(--color-bg-2);
+    position: fixed;
+    padding: 20px;
+    transition: .6s;
+    right: -50px;
+    color: black !important;
+}
+
+.header .bag .close-bag {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--bg-primary);
+    cursor: pointer;
+}
+
+.header .bag .bag-content {
+    width: 100%;
+    height: 400px;
+}
+
+.header .bag button {
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    padding: 0.4rem 0.7rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: var(--color-second-2);
+}
+
+.header .bag .bag-title {
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: 'Peralta', cursive;
+    font-style: italic;
+    opacity: .7;
+}
+
+.header .header-content {
+    width: 90%;
+    margin: 0 auto;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .header-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: left;
+}
+
+.header-list .anchor {
+    cursor: pointer;
+    transition: .5s;
+    font-size: 1.2rem;
+    color: inherit;
+}
+
+.header-list .anchor:not(:last-child) {
+    padding-right: 2rem;
+}
+
+.header-list .anchor:hover {
+    color: var(--color-second);
+}
+
+.container .icon-list {
+    font-size: 2rem;
+    color: white;
+    background-color: var(--color-second-2);
+    padding: 0.2rem .8rem;
+    border-radius: 3px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container .nav-small-screen {
+    position: absolute;
+    z-index: 1001;
+    background-color: #eee;
+    height: 100%;
+    flex-direction: column;
+    padding: 20px;
+    top: 0px;
+    left: -500px;
+    justify-content: left;
+    align-items: baseline;
+    transition: .5s;
+    border-radius: 5px;
+    color: black !important;
+}
+
+.nav-small-screen .close-list {
+    text-align: right;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.container .nav-small-screen ul .list {
+    padding: 20px;
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+    cursor: pointer;
+    color: var(--color-text-primay);
+}
+
+.container .nav-small-screen ul .list li {
+    margin-left: 1rem;
+}
+
+.container .header-title {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Peralta', cursive;
+    display: flex;
+    align-items: center;
+}
+
+.header .container .icon {
+    font-size: 2rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.container .icon .shop-number {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: -20px;
+    right: -15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--color-second-2);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@media (max-width:800px) {
+    .container .header-list {
+        display: none;
+    }
+
+    .container .icon-list {
+        display: flex;
+    }
+
+    .container .header-title {
+        transform: translateX(-50%);
+    }
+
+    .header .bag {
+        width: 50%;
+    }
+}

@@ -1,0 +1,41 @@
+.home-part {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../images/main-bcg.jpeg') center/cover;
+    color: white;
+    margin-bottom: 5rem;
+}
+
+.home-content {
+    margin-top: 7rem;
+    padding: 1.7rem;
+}
+
+.home-content .home-title {
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: 'Kaushan Script', cursive;
+    font-style: italic;
+    letter-spacing: 5px;
+}
+
+.home-content p {
+    font-size: 2rem;
+}
+
+.home-content button {
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 3px;
+    color: white;
+    padding: 0.7rem 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.home-content button:hover {
+    background-color: white;
+    color: var(--color-second);
+}

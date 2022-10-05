@@ -1,0 +1,94 @@
+.detail-content {
+    padding: 1rem 3.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.detail-content .detail-image {
+    max-width: 100%;
+}
+
+.detail-content .detail-image img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.detail-info .name {
+    color: var(--color-text-primay);
+    font-weight: 500;
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+}
+
+.detail-info .company {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--color-primary-2);
+    font-style: italic;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+}
+
+.detail-info .price {
+    display: block;
+    color: var(--color-primary);
+    font-weight: 500;
+    position: relative;
+}
+
+.detail-info .price::after,
+.detail-info .price::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    bottom: -30px;
+}
+
+.detail-info .price::before {
+    background-color: var(--color-second-2);
+}
+
+.detail-info .price::after {
+    background-color: var(--color-text-primay);
+    left: 20px;
+}
+
+.detail-info .description {
+    margin-top: 3rem;
+    color: var(--color-primary-2);
+    letter-spacing: 1.5px;
+    line-height: 1.5;
+}
+
+.detail-info .add {
+    text-transform: uppercase;
+    padding: .7rem 1rem;
+    color: white;
+    background-color: var(--color-second-2);
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    transition: .5s;
+    margin-top: 2rem;
+}
+
+.detail-info .add:hover {
+    background-color: var(--color-second);
+    color: black;
+}
+
+@media (max-width:530px) {
+    .detail-content {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    .detail-content {
+        padding: 1rem 0;
+    }
+}

@@ -1,0 +1,147 @@
+.products-part {
+    width: 100%;
+    margin: 4rem auto;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    position: relative;
+}
+
+.filter-part {
+    position: sticky;
+    top: 1rem;
+}
+
+.filter-part input {
+    padding: 10px;
+    border: none;
+    background-color: var(--color-bg);
+    border-radius: 5px;
+}
+
+.filter-part p,
+.price-filter p {
+    font-weight: 500;
+    color: var(--color-text-primay);
+}
+
+.filter-part .btns-filter {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-part .btn-filter {
+    cursor: pointer;
+    padding: 3px 10px;
+    color: var(--color-primary-2);
+}
+
+.filter-part .active {
+    background-color: var(--color-bg-2);
+}
+
+.filter-part .price-filter {
+    display: flex;
+    flex-direction: column;
+}
+
+.price-filter p {
+    margin-bottom: 0;
+}
+
+.price-filter input {
+    width: 150px;
+}
+
+.price-filter span {
+    color: var(--color-primary-2);
+    padding: 3px 10px;
+}
+
+.products-content {
+    flex-basis: 900px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+}
+
+.products-part .empty {
+    flex-basis: 900px;
+    font-size: 2rem;
+    color: var(--color-primary);
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.product-content {
+    text-align: center;
+    position: relative;
+}
+
+.product-content .product-icon {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s;
+    opacity: 0;
+    display: flex;
+}
+
+.product-icon .icon {
+    background-color: var(--color-second-2);
+    color: white;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.product-content .pic {
+    height: 200px;
+    margin: 0;
+    padding: 0;
+}
+
+.product-content .pic:hover .product-icon {
+    opacity: 1;
+}
+
+.product-content .pic img {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    object-fit: cover;
+}
+
+.product-content .product-title {
+    margin: 5px 0;
+    color: var(--color-primary-2);
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.product-content .product-price {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--color-text-primay);
+    font-weight: bold;
+}
+
+@media (max-width:768px) {
+    .products-head {
+        font-size: 1rem;
+    }
+
+    .products-part {
+        flex-direction: column;
+    }
+
+
+}
