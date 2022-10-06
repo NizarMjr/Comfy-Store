@@ -9,14 +9,29 @@
 
 
 .header .bag {
-    z-index: 999;
-    width: 350px;
+    z-index: -1;
+    opacity: 0;
+    min-width: 400px;
+    min-height: 100vh;
     background-color: var(--color-bg-2);
     position: fixed;
     padding: 20px;
     transition: .6s;
     right: -50px;
     color: black !important;
+}
+
+.header .show {
+    opacity: 1;
+    z-index: 1999;
+}
+
+.bag .total-price {
+    display: block;
+    text-align: center;
+    margin: 3rem 0;
+    font-family: 'Peralta', cursive;
+    font-size: 2rem;
 }
 
 .header .bag .close-bag {
@@ -28,12 +43,12 @@
 
 .header .bag .bag-content {
     width: 100%;
-    height: 400px;
+    height: 100%;
 }
 
 .header .bag button {
     width: fit-content;
-    margin: 0 auto;
+    margin: 1rem auto;
     font-size: 1rem;
     letter-spacing: 2px;
     font-weight: bold;
@@ -167,6 +182,42 @@
     font-size: 18px;
     font-weight: bold;
 }
+
+.bag-content {
+    height: fit-content;
+}
+
+.shop {
+    display: flex;
+    align-items: center;
+}
+
+.shop img {
+    max-width: 80px;
+    border-radius: 3px;
+    margin-right: 20px;
+}
+
+.shop .shop-title {
+    color: var(--color-primary);
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-bottom: 0;
+}
+
+.shop .shop-price {
+    font-size: 12px;
+}
+
+.shop .remove-shop {
+    display: block;
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--color-primary-2);
+    cursor: pointer;
+}
+
 
 @media (max-width:800px) {
     .container .header-list {

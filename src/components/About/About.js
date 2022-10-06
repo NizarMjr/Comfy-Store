@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../Header/Header";
 import about from './about.css'
 
-const About = () => {
+const About = (props) => {
     return (
         <div className="about">
             <Header />

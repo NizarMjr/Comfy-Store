@@ -19,14 +19,23 @@ function App() {
   data.forEach((item) => {
     item.price = Math.floor(item.price.toString().charAt(0).concat(item.price.toString().charAt(1)));
   })
+  const shop = [];
+  useEffect(() => {
+    localStorage.setItem('number', 0);
+    localStorage.setItem('shop', JSON.stringify(shop));
+  }, [])
+  const [toggleShop, setToggleShop] = useState(false);
+  const setToggle = () => {
+    toggleShop == false ? setToggleShop(true) : setToggleShop(false)
+  }
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path='/' exact element={<Home data={data} />}></Route>
-          <Route path='/products' exact element={<Product data={data} />}></Route>
+          <Route path='/' exact element={<Home data={data} toggleShop={toggleShop} setToggle={setToggle} />}></Route>
+          <Route path='/products' exact element={<Product data={data} toggleShop={toggleShop} setToggle={setToggle} />}></Route>
           <Route path='/about' exact element={<About />}></Route>
-          <Route path='/detail' exact element={<Details />}></Route>
+          <Route path='/detail' exact element={<Details toggleShop={toggleShop} setToggle={setToggle} />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

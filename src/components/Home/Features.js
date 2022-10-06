@@ -7,7 +7,7 @@ import { AiOutlineSearch, AiOutlineShoppingCart } from 'react-icons/ai'
 import { Link } from "react-router-dom";
 const Feature = (props) => {
 
-    const { data } = props
+    const { data, setToggle } = props
     const feature = data.map((item, index) => {
         if (item.name == 'high-back bench' || item.name == 'utopia sofa' || item.name == 'entertainment center')
             return (
@@ -16,7 +16,7 @@ const Feature = (props) => {
                         <img src={item.image} alt="picture" />
                         <div className="feature-icon">
                             <Link to='/detail' className="icon" onClick={() => localStorage.setItem('item', JSON.stringify(item))}><AiOutlineSearch /></Link>
-                            <div className="icon" onClick={() => increaseShop()}><AiOutlineShoppingCart /></div>
+                            <div className="icon" onClick={() => increaseShop(item)}><AiOutlineShoppingCart /></div>
                         </div>
                     </div>
                     <p className="feature-title">{item.name}</p>
@@ -24,10 +24,14 @@ const Feature = (props) => {
                 </div>
             )
     })
-    const increaseShop = () => {
+    const increaseShop = (item) => {
         let shopNumber = localStorage.getItem('number');
         shopNumber = parseInt(shopNumber) + 1;
         localStorage.setItem('number', shopNumber);
+        setToggle()
+        const shops = JSON.parse(localStorage.getItem('shop'));
+        shops.push(item)
+        localStorage.setItem('shop', JSON.stringify(shops))
     }
     return (
         <section className="features">

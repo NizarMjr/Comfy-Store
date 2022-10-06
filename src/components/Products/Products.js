@@ -6,7 +6,7 @@ import { DebounceInput } from 'react-debounce-input';
 import { Link } from "react-router-dom";
 
 const Product = (props) => {
-    const { data } = props
+    const { data, toggleShop, setToggle } = props
     const [products, setProducts] = useState(data);
     const [price, setPrice] = useState(50);
     const [search, setSearch] = useState('');
@@ -39,9 +39,18 @@ const Product = (props) => {
         })
         setProducts(filtredData)
     }
+    const increaseShop = (item) => {
+        let shopNumber = localStorage.getItem('number');
+        shopNumber = parseInt(shopNumber) + 1;
+        localStorage.setItem('number', shopNumber);
+        setToggle();
+        const shops = JSON.parse(localStorage.getItem('shop'));
+        shops.push(item)
+        localStorage.setItem('shop', JSON.stringify(shops))
+    }
     return (
         <div className="products">
-            <Header />
+            <Header toggleShop={toggleShop} setToggle={setToggle} />
             <div className="section-head">
                 <p>Home / Products</p>
             </div>
@@ -74,7 +83,7 @@ const Product = (props) => {
                                             <img src={item.image} alt="picture" />
                                             <div className="product-icon">
                                                 <Link to='/detail' className="icon" onClick={() => localStorage.setItem('item', JSON.stringify(item))} ><AiOutlineSearch /></Link >
-                                                <div className="icon"><AiOutlineShoppingCart /></div>
+                                                <div className="icon" onClick={() => increaseShop(item)}><AiOutlineShoppingCart /></div>
                                             </div>
                                         </div>
                                         <p className="product-title">{item.name}</p>

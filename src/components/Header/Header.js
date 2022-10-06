@@ -8,19 +8,28 @@ import { FcAbout } from 'react-icons/fc'
 import header from './header.css'
 import { Link } from "react-router-dom";
 const Header = (props) => {
-    const { white } = props;
-    const [bag, setBag] = useState('0');
+    const { white, toggleShop, setToggle } = props;
+    const [bag, setBag] = useState('');
     const [smallNav, setSmallNav] = useState('-500px');
-    const [shopNumber, setShopNumber] = useState(0);
-    useEffect(() => {
-        const updateNumber = shopNumber;
-        setShopNumber(localStorage.getItem('number'));
+    const [shops, setShops] = useState(JSON.parse(localStorage.getItem('shop')))
 
-        if (updateNumber != shopNumber) toggleBag();
+    useEffect(() => {
+        if (toggleShop === true) {
+            toggleBag();
+            setShops(JSON.parse(localStorage.getItem('shop')));
+        };
     })
+
+    let totalPrice = 0;
     const toggleBag = () => {
-        if (bag == 0) setBag('350px')
-        else setBag(0);
+        if (bag == '' || toggleShop === true) {
+            setBag('show');
+            setToggle();
+        }
+        else {
+            setBag('');
+        }
+        console.log('toggled');
     }
     const toggleSmallNav = () => {
         smallNav == '-500px' ? setSmallNav('0') : setSmallNav('-500px')
@@ -31,13 +40,39 @@ const Header = (props) => {
             <div className="sale-pic">{item.img}</div>
         )
     })
+    const removeShop = (id) => {
+        const updateShop = shops.filter((item, index) => {
+            return `${item.id + index}` != id;
+        })
+        localStorage.setItem('shop', JSON.stringify(updateShop))
+        setShops(JSON.parse(localStorage.getItem('shop')));
+        let updateNumber = localStorage.getItem('number');
+        updateNumber = parseInt(updateNumber) - 1;
+        localStorage.setItem('number', updateNumber);
+    }
+    const allShop = shops.map((item, index) => {
+        totalPrice += item.price
+        return (
+            <div className="shop" key={index}>
+                <img src={item.image} />
+                <div className="shop-content">
+                    <p className="shop-title">{item.name}</p>
+                    <span className="shop-price">${item.price}</span>
+                    <span className="remove-shop" onClick={() => removeShop(`${item.id + index}`)}>remove</span>
+                </div>
 
+            </div>
+        )
+    })
     return (
         <header className="header" style={{ color: white }}>
-            <div className="bag" style={{ width: bag }}>
+            <div className={`bag ${bag}`}>
                 <span className="close-bag" onClick={() => toggleBag()}>{<IoIosCloseCircle />}</span>
                 <h2 className="bag-title">Your Bag</h2>
-                <div className="bag-content"></div>
+                <div className="bag-content">
+                    {allShop}
+                </div>
+                <span className="total-price">Total : ${totalPrice}</span>
                 <button>Checkout</button>
             </div>
             <div className="container">
@@ -58,7 +93,7 @@ const Header = (props) => {
                     </ul>
                     <div className="icon" onClick={() => toggleBag()}>
                         <FaShoppingCart />
-                        <span className="shop-number" >{shopNumber}</span>
+                        <span className="shop-number" >{localStorage.getItem('number')}</span>
                     </div>
                 </div>
                 <h2 className="header-title">Comfy</h2>
