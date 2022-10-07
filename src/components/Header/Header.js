@@ -81,15 +81,15 @@ const Header = (props) => {
                     <div className="nav-small-screen" style={{ left: smallNav }}>
                         <div className="close-list" onClick={() => toggleSmallNav()}><IoIosCloseCircle /></div>
                         <ul>
-                            <Link to='/' className="list"><AiTwotoneHome /><li>Home</li></Link>
-                            <Link to='/products' className="list"><MdOutlineProductionQuantityLimits /><li>Product</li></Link>
-                            <Link to='/about' className="list"><FcAbout /><li>About</li></Link>
+                            <Link to='/Comfy-Store/' className="list"><AiTwotoneHome /><li>Home</li></Link>
+                            <Link to='/Comfy-Store/products' className="list"><MdOutlineProductionQuantityLimits /><li>Product</li></Link>
+                            <Link to='/Comfy-Store/about' className="list"><FcAbout /><li>About</li></Link>
                         </ul>
                     </div>
                     <ul className="header-list">
-                        <Link to='/' className="anchor">Home</Link>
-                        <Link to='/products' className="anchor">Products</Link>
-                        <Link to='/about' className="anchor">About</Link>
+                        <Link to='/Comfy-Store/' className="anchor">Home</Link>
+                        <Link to='/Comfy-Store/products' className="anchor">Products</Link>
+                        <Link to='/Comfy-Store/about' className="anchor">About</Link>
                     </ul>
                     <div className="icon" onClick={() => toggleBag()}>
                         <FaShoppingCart />

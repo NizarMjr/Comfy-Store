@@ -32,10 +32,10 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path='/' exact element={<Home data={data} toggleShop={toggleShop} setToggle={setToggle} />}></Route>
-          <Route path='/products' exact element={<Product data={data} toggleShop={toggleShop} setToggle={setToggle} />}></Route>
-          <Route path='/about' exact element={<About />}></Route>
-          <Route path='/detail' exact element={<Details toggleShop={toggleShop} setToggle={setToggle} />}></Route>
+          <Route path='/Comfy-Store/' exact element={<Home data={data} toggleShop={toggleShop} setToggle={setToggle} />}></Route>
+          <Route path='/Comfy-Store/products' exact element={<Product data={data} toggleShop={toggleShop} setToggle={setToggle} />}></Route>
+          <Route path='/Comfy-Store/about' exact element={<About />}></Route>
+          <Route path='/Comfy-Store/detail' exact element={<Details toggleShop={toggleShop} setToggle={setToggle} />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
