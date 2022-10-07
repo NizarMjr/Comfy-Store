@@ -14,7 +14,7 @@ const Home = (props) => {
                 <div className="home-content">
                     <h1 className="home-title">Rest, Relax, Unwind</h1>
                     <p>Embrace your choices - we do</p>
-                    <Link to='/products'><button>SHOW NOW</button></Link>
+                    <Link to='/Comfy-Store/products'><button>SHOW NOW</button></Link>
                 </div>
             </div>
             <Feature data={data} setToggle={setToggle} /></>

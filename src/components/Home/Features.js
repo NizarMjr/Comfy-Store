@@ -15,7 +15,7 @@ const Feature = (props) => {
                     <div className="pic">
                         <img src={item.image} alt="picture" />
                         <div className="feature-icon">
-                            <Link to='/detail' className="icon" onClick={() => localStorage.setItem('item', JSON.stringify(item))}><AiOutlineSearch /></Link>
+                            <Link to='/Comfy-Store/detail' className="icon" onClick={() => localStorage.setItem('item', JSON.stringify(item))}><AiOutlineSearch /></Link>
                             <div className="icon" onClick={() => increaseShop(item)}><AiOutlineShoppingCart /></div>
                         </div>
                     </div>
@@ -40,7 +40,7 @@ const Feature = (props) => {
                 <div className="feature-container">
                     {feature}
                 </div>
-                <Link to='/products'> <button className="feature-btn">All Product</button></Link>
+                <Link to='/Comfy-Store/products'> <button className="feature-btn">All Product</button></Link>
             </div>
         </section>
     )

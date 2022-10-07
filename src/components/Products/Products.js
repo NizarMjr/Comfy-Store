@@ -82,7 +82,7 @@ const Product = (props) => {
                                         <div className="pic">
                                             <img src={item.image} alt="picture" />
                                             <div className="product-icon">
-                                                <Link to='/detail' className="icon" onClick={() => localStorage.setItem('item', JSON.stringify(item))} ><AiOutlineSearch /></Link >
+                                                <Link to='/Comfy-Store/detail' className="icon" onClick={() => localStorage.setItem('item', JSON.stringify(item))} ><AiOutlineSearch /></Link >
                                                 <div className="icon" onClick={() => increaseShop(item)}><AiOutlineShoppingCart /></div>
                                             </div>
                                         </div>
