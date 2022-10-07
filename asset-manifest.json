@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/Comfy-Store/static/css/main.eaf21fd6.css",
-    "main.js": "/Comfy-Store/static/js/main.8c0ac65d.js",
+    "main.js": "/Comfy-Store/static/js/main.1d13e8cd.js",
     "static/media/feature2.jpg": "/Comfy-Store/static/media/feature2.40769ba2c2ec28e09cf1.jpg",
     "static/media/feature3.jpg": "/Comfy-Store/static/media/feature3.fed9542980f1d3a260ef.jpg",
     "static/media/feature1.jpg": "/Comfy-Store/static/media/feature1.2bd3a663705fa5ebbb40.jpg",
     "static/media/main-bcg.jpeg": "/Comfy-Store/static/media/main-bcg.7880c4eab3c7fb142ae4.jpeg",
     "index.html": "/Comfy-Store/index.html",
     "main.eaf21fd6.css.map": "/Comfy-Store/static/css/main.eaf21fd6.css.map",
-    "main.8c0ac65d.js.map": "/Comfy-Store/static/js/main.8c0ac65d.js.map"
+    "main.1d13e8cd.js.map": "/Comfy-Store/static/js/main.1d13e8cd.js.map"
   },
   "entrypoints": [
     "static/css/main.eaf21fd6.css",
-    "static/js/main.8c0ac65d.js"
+    "static/js/main.1d13e8cd.js"
   ]
 }
